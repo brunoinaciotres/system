@@ -1,0 +1,12 @@
+.header {
+    height: 40px;
+    color: #fff;
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header .date {
+    font-size: .8rem;
+}
