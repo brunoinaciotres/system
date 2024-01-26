@@ -98,7 +98,6 @@ input[type="radio"]:checked+.checkbox-label {
 }
 
 .modal-bottom {
-   
     display: flex;
     align-items: end;
 }
