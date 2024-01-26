@@ -4,7 +4,7 @@ import MenuSVG from '../../atoms/Icons/MenuSVG'
 
 export default function Header() {
   return (
-    <header className="bg-blue  header">
+    <header className=" header">
         <span className="date">
             Segunda-feira, 03 de janeiro
         </span>

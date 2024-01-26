@@ -2,14 +2,30 @@ import React from 'react'
 import Header from '../molecules/Header/Header'
 import PageHeader from '../molecules/PageHeader/PageHeader'
 import Nav from '../molecules/Nav/Nav'
+import Modal from '../molecules/Modal/Modal'
 
 export default function Template(props) {
+    const [modalIsOpen, setModalIsOpen] = React.useState(true)
+
+    const handleCloseModal = () => {
+        setModalIsOpen(!modalIsOpen)
+    }
+
+  
+
     return (
         <>
             <Header />
-            <PageHeader title={props.pageTitle} buttonText={props.buttonText}/>
+            <PageHeader 
+                handleCloseModal = {handleCloseModal} 
+                modalIsOpen = {modalIsOpen} 
+                title={props.pageTitle} 
+                buttonText={props.buttonText} 
+            />
             {props.pageBody}
-            <Nav active={props.active}/>
+            <Modal handleCloseModal = {handleCloseModal} modalIsOpen = {modalIsOpen}/>
+            <Nav active={props.active} />
+
         </>
     )
 }

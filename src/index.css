@@ -18,6 +18,10 @@ body {
   height: 100vh;
 }
 
+.d-none {
+  display: none !important;
+}
+
 .bold {
   font-weight: bold;
 }
@@ -45,3 +49,4 @@ body {
 .bg-blue-gradient {
   background: linear-gradient(45deg, #1F51FF 0%, #361FFF 100%);
 }
+

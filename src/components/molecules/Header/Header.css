@@ -5,6 +5,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    background: linear-gradient(45deg, #000 0%, #0e0e0e 100%);
 }
 
 .header .date {
