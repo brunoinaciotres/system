@@ -20,6 +20,19 @@ export default function FormAddOrder() {
             <input required={true} className={inputClassName} value={inputValue} onChange={handleChange} type="text" name="name" />
             <label className="inside-label" htmlFor="name">Nome</label>
         </fieldset>
+        <fieldset>
+          <input type="checkbox" name="monday" id="monday" className="d-none" />
+          <span className="checkbox-title">Dias</span>
+          <div className="label-container">
+            <label htmlFor="monday" className="checkbox-label">S</label>
+            <label htmlFor="monday" className="checkbox-label">T</label>
+            <label htmlFor="monday" className="checkbox-label">Q</label>
+            <label htmlFor="monday" className="checkbox-label">Q</label>
+            <label htmlFor="monday" className="checkbox-label">S</label>
+            <label htmlFor="monday" className="checkbox-label">S</label>
+          </div>
+          
+        </fieldset>
     </form>
   )
 }
