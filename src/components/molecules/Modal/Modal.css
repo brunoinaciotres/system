@@ -24,7 +24,7 @@
   .modal-top {
     display: flex;
     justify-content: space-between;
-    margin-bottom:2rem;
+    margin-bottom:3rem;
   }
 
   .modal-top i {

@@ -27,7 +27,7 @@ export default function FormAddOrder() {
         
           
 
-          <span className="checkbox-title">Dias</span>
+          <span className="fieldset-title">Dias</span>
           <div className="label-container">
             <input type="checkbox" name="monday" id="monday" hidden />
             <label htmlFor="monday" className="checkbox-label">S</label>
@@ -43,6 +43,20 @@ export default function FormAddOrder() {
             <label htmlFor="saturday" className="checkbox-label">S</label>
           </div>
           
+        </fieldset>
+
+        <fieldset>
+          <span className="fieldset-title">Frequência</span>
+          <div className="label-container">
+            <input type="radio" name="freq" id="1" hidden />
+            <label htmlFor="1" className="checkbox-label square"> Só Hoje</label>
+            <input type="radio" name="freq" id="7" hidden />
+            <label htmlFor="7" className="checkbox-label square">Toda Semana</label>
+            <input type="radio" name="freq" id="15" hidden />
+            <label htmlFor="15" className="checkbox-label square"> Cada 15 dias</label>
+            <input type="radio" name="freq" id="30" hidden/>
+            <label htmlFor="30" className="checkbox-label square">Todo mês</label>
+          </div>
         </fieldset>
     </form>
   )
