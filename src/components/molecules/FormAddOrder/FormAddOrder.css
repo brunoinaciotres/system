@@ -21,7 +21,7 @@ fieldset {
     position: absolute;
     margin-left:1rem;
     left:0;
-    padding: 0 .5rem;
+    padding: 0 .2rem;
     font-size: .8rem;
     display: flex;
     align-items: center;
@@ -30,11 +30,11 @@ fieldset {
     background-color: transparent;
 }
 
-.main-input:valid {
+.main-input:valid, .main-input:focus {
     border:1px solid var(--main-blue);
 }
 
-.main-input:valid + .inside-label {
+.main-input:valid + .inside-label,.main-input:focus + .inside-label  {
     top:0;
     transform: translateY(-50%);
     background-color: #fff;
