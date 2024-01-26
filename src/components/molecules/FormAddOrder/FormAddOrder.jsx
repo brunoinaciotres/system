@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import "./FormAddOrder.css"
 
-export default function FormAddOrder() {
+export default function FormAddOrder(props) {
     const [inputValue, setValue] = useState("")
-    const [inputClassName, setInputClassName] = useState("main-input")
     const [frequency, setFrequency] = useState({
       1:false,
       2:false,
@@ -19,10 +18,16 @@ export default function FormAddOrder() {
 
     const handleChange = (e) => {
       const value = e.target.value
-      
       setValue(value)
-        
     }
+
+    useEffect(() => {
+      console.log("mudou modal")
+
+      return () => {
+        setValue("")
+      }
+    }, [props.modalIsOpen])
 
     const handleCheckboxChange = (e) => {
       const day = e.target.value
@@ -38,7 +43,7 @@ export default function FormAddOrder() {
   return (
     <form action="#">   
         <fieldset>
-            <input required={true} className={inputClassName} value={inputValue} onChange={handleChange} type="text" name="name" />
+            <input required={true} className="main-input" value={inputValue} onChange={handleChange} type="text" name="name" />
             <label className="inside-label" htmlFor="name">Nome</label>
         </fieldset>
         <fieldset>
@@ -65,9 +70,9 @@ export default function FormAddOrder() {
           <span className="fieldset-title">Frequência</span>
           <div className="label-container">
             <input type="radio" name="freq" id="1" value="1" hidden />
-            <label htmlFor="1" className="checkbox-label square"> Só Hoje</label>
+            <label htmlFor="1" className="checkbox-label square mb-1"> Só Hoje</label>
             <input type="radio" name="freq" id="7"  value="7"hidden />
-            <label htmlFor="7" className="checkbox-label square">Toda Semana</label>
+            <label htmlFor="7" className="checkbox-label square mb-1">Toda Semana</label>
             <input type="radio" name="freq" id="15" value="15" hidden />
             <label htmlFor="15" className="checkbox-label square"> Cada 15 dias</label>
             <input type="radio" name="freq" id="30" value="30" hidden/>
