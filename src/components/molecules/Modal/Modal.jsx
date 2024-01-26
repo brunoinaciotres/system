@@ -3,9 +3,6 @@ import "./Modal.css"
 import FormAddOrder from '../FormAddOrder/FormAddOrder.jsx'
 export default function Modal(props) {
 
-    useEffect(() => {
-
-    }, [props.modalIsOpen])
 
     return (
         <div className={props.modalIsOpen == false ? "modal-background d-none" : "modal-background"}>

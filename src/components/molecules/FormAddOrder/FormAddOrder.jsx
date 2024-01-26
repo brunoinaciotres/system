@@ -41,6 +41,7 @@ export default function FormAddOrder(props) {
 
 
   return (
+    <>
     <form action="#">   
         <fieldset>
             <input required={true} className="main-input" value={inputValue} onChange={handleChange} type="text" name="name" />
@@ -80,5 +81,9 @@ export default function FormAddOrder(props) {
           </div>
         </fieldset>
     </form>
+    <div className="modal-bottom">
+      <button className="main-button">Adicionar Pedido</button>
+    </div>
+    </>
   )
 }
