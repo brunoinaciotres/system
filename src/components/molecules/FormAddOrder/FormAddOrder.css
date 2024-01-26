@@ -30,6 +30,8 @@ fieldset {
     justify-content: center;
     color: #000;
     margin-right: 10px;
+    cursor:pointer;
+    user-select: none;
 }
 
 .inside-label {
@@ -64,4 +66,10 @@ fieldset {
 .checkbox-title {
     margin-bottom: 1rem;
     font-size:.9rem;
+}
+
+input[type="checkbox"]:checked + .checkbox-label {
+    background-color: var(--main-blue);
+    color: #fff;
+    border:1px solid var(--main-blue);
 }
