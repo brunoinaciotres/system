@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import "./Modal.css"
-import FormAddOrder from '../FormAddOrder/FormAddOrder'
+import FormAddOrder from '../FormAddOrder/FormAddOrder.jsx'
 export default function Modal(props) {
 
     return (
