@@ -8,7 +8,7 @@ export default function PageHeader(props) {
     props.handleCloseModal()
   }
   return (
-    <div className="page-header white-color bg-blue-gradient">
+    <div className="page-header white-color">
       <span className="page-title bold">
         {props.title}
       </span>
