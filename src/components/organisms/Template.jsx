@@ -22,6 +22,9 @@ export default function Template(props) {
                 title={props.pageTitle} 
                 buttonText={props.buttonText} 
             />
+            <div class="top-reminder bold bg-blue-gradient">
+                Início de mês
+            </div>
             {props.pageBody}
             <Modal handleCloseModal = {handleCloseModal} modalIsOpen = {modalIsOpen}/>
             <Nav active={props.active} />
