@@ -5,7 +5,7 @@ import Nav from '../molecules/Nav/Nav'
 import Modal from '../molecules/Modal/Modal'
 
 export default function Template(props) {
-    const [modalIsOpen, setModalIsOpen] = React.useState(true)
+    const [modalIsOpen, setModalIsOpen] = React.useState(false)
 
     const handleCloseModal = () => {
         setModalIsOpen(!modalIsOpen)
