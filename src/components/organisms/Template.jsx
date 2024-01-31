@@ -22,7 +22,7 @@ export default function Template(props) {
                 title={props.pageTitle} 
                 buttonText={props.buttonText} 
             />
-            <div class="top-reminder">
+            <div className="top-reminder">
                 Início de mês
             </div>
             {props.pageBody}
