@@ -1,0 +1,48 @@
+.orders {
+    margin-top:1rem;
+}
+
+.order {
+    padding: 0 1rem;
+    margin-bottom: 15px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: .9rem;
+    height: 2rem;
+    
+}
+
+.indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--green);
+    display:inline-block;
+    margin-right:10px;
+    position: relative;
+}
+
+.indicator.grey {
+    background-color: var(--light-grey)
+} 
+
+.indicator-line {
+    width: 2px;
+    height: 40px;
+    background-color: var(--light-grey);
+    display:inline-block;
+    position: absolute;
+    left:calc(50% - 1px);
+    bottom: -40px;
+}
+
+.order i {
+    color: var(--green);
+    font-size:1.5rem
+}
+
+.order-status {
+    cursor:pointer;
+}
