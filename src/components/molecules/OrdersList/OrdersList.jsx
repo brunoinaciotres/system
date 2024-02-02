@@ -13,7 +13,7 @@ export default function OrdersList() {
             method: 'GET',
             mode: 'cors',
             headers: {
-                'Content-Type': 'application/js on'
+                'Content-Type': 'application/json'
             }
         })
         .then(response => {
