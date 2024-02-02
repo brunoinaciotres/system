@@ -3,13 +3,13 @@ import './OrdersList.css'
 import Order from '../../atoms/Order/Order'
 
 export default function OrdersList() {
-    
+    const API_URL_DEV = "127.0.0.1"
     const [orders, setOrders] = useState([
         
     ])
 
     useEffect(() => {
-        fetch(`${process.env.API_URL}/orders/getAll`, {
+        fetch(`${API_URL_DEV}:3030/orders/getAll`, {
             method: 'GET',
             mode: 'cors',
             headers: {
