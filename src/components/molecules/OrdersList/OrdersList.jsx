@@ -5,19 +5,11 @@ import Order from '../../atoms/Order/Order'
 export default function OrdersList() {
     
     const [orders, setOrders] = useState([
-        {
-            name: "Ambev",
-            concluded: false,
-        },
-        {
-            name:"BRF",
-            concluded:false
-        },
         
     ])
 
     useEffect(() => {
-        fetch("http://127.0.0.1:3030/orders/getOrdersOfDay", {
+        fetch(`${process.env.API_URL}/orders/getAll`, {
             method: 'GET',
             mode: 'cors',
             headers: {

@@ -13,11 +13,6 @@ export default function FormAddOrder(props) {
   })
   const [frequency, setFrequency] = useState(0)
 
-  useEffect(() => {
-    console.log(daysOfWeek)
-    console.log(frequency)
-  }, [daysOfWeek, frequency])
-
   const handleChange = (e) => {
     const value = e.target.value
     setValue(value)

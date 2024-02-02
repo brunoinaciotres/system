@@ -1,7 +1,25 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './Order.css'
 
 export default function Order({order, setOrders}) {
+
+    useEffect(() => {
+        const ordersConcluded = localStorage.getItem('ordersConcluded')
+
+        if (ordersConcluded) {
+            const ordersConcludedArr = ordersConcluded.split(",").map(order => order.trim())
+         
+            setOrders(previousOrders => {
+       
+                return previousOrders.map(order => ({
+                    ...order,
+                    concluded: ordersConcludedArr.includes(order.name) 
+                }))    
+            }
+            )
+        }
+
+    }, [])
 
     const handleStatusChange = (e) => {
 
@@ -15,6 +33,23 @@ export default function Order({order, setOrders}) {
                 order.name == orderId ? { ...order, concluded: !order.concluded } : order
             )
         )
+        const currentStorage = localStorage.getItem("ordersConcluded")
+        
+        
+        if (!currentStorage) {
+            localStorage.setItem("ordersConcluded", orderId)
+        } else {
+            console.log("ORDER ID -->" + orderId)
+            const currentStorageArr = currentStorage.split(",").map(value => value.trim())
+            console.log("currentSTORAGE " + currentStorageArr)
+            console.log(currentStorageArr.includes(orderId))
+            if (!currentStorageArr.includes(orderId)) {
+                console.log("entrei")
+                localStorage.setItem("ordersConcluded", `${currentStorage}, ${orderId}`)
+            }
+            
+        }
+        
 
     }
 
@@ -28,7 +63,7 @@ export default function Order({order, setOrders}) {
                 {order.name}
             </span>
 
-            <div onClick={handleStatusChange} id={order.name} className="order-status link-color underline">
+            <div onClick={handleStatusChange} id={order.name} className={order.concluded == true ? "d-none": "order-status link-color underline"} >
                 Marcar como concluído
             </div>
             <i className={order.concluded == true ? "bi bi-check-lg" : 'd-none '}></i>
