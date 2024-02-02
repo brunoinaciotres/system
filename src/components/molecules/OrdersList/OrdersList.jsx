@@ -9,7 +9,7 @@ export default function OrdersList() {
     ])
 
     useEffect(() => {
-        fetch(`${process.env.API_URL}/orders/getAll`, {
+        fetch(`/orders/getAll`, {
             method: 'GET',
             mode: 'cors',
             headers: {
