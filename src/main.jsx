@@ -9,6 +9,8 @@ import {
 import Pedidos from './components/organisms/pages/Pedidos/Pedidos.jsx';
 import Template from './components/organisms/Template.jsx';
 
+const API_URL = "http://192.168.15.32:3030"
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -16,7 +18,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/pedidos",
-    element: <Template pageBody={<Pedidos/>} pageTitle="Pedidos" buttonText="Adicionar" active="pedidos"/>,
+    element: <Template API_URL={API_URL} pageBody={<Pedidos API_URL={API_URL}/>} pageTitle="Pedidos" buttonText="Adicionar" active="pedidos"/>,
   },
 ]);
 

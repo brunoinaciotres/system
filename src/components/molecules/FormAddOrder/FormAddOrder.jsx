@@ -20,16 +20,7 @@ export default function FormAddOrder(props) {
 
   useEffect(() => {
     return () => {
-      setValue("")
-      setDaysOfWeek({
-        1: false,
-        2: false,
-        3: false,
-        4: false,
-        5: false,
-        6: false
-      })
-      setFrequency(0)
+      clearInputs()
     }
   }, [props.modalIsOpen])
 
@@ -49,13 +40,52 @@ export default function FormAddOrder(props) {
   }
 
   const handleSubmit = (e) => {
-    const data = {
-      name: inputName,
-      daysOfWeek,
-      frequency
+    let daysOfWeekString = ""
+
+    for (let day in daysOfWeek) {
+      if (daysOfWeek[day]) {
+        daysOfWeekString = daysOfWeekString.concat(`${day}, `)
+      }
     }
 
-    console.log(data)
+    const data = {
+      name: inputName,
+      days: daysOfWeekString,
+      frequency
+    }
+   
+    insertOrder(data)
+    
+  }
+
+  const insertOrder = async (data) => {
+    await fetch(`${props.API_URL}/orders/insert`, {
+      method: "POST",
+      mode: "cors",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data)
+    })
+    .then(response => response.json())
+    .then(data => {
+      alert(data.msg)
+      clearInputs()
+      props.handleCloseModal()
+    })
+  }
+
+  const clearInputs = () => {
+    setValue("")
+      setDaysOfWeek({
+        1: false,
+        2: false,
+        3: false,
+        4: false,
+        5: false,
+        6: false
+      })
+      setFrequency(0)
   }
 
 
@@ -70,7 +100,7 @@ export default function FormAddOrder(props) {
 
           <span className="fieldset-title">Dias</span>
           <div className="label-container">
-            <input type="checkbox" checked={daysOfWeek[1] == true ? true : false} onChange={handleCheckboxChange} name="monday" id="monday" value={1} hidden  />
+            <input type="checkbox" checked={daysOfWeek[1] == true ? true : false} onChange={handleCheckboxChange} name="monday" id="monday" value={1} hidden />
             <label htmlFor="monday" className="checkbox-label">S</label>
             <input type="checkbox" checked={daysOfWeek[2] == true ? true : false} onChange={handleCheckboxChange} name="tuesday" id="tuesday" value={2} hidden />
             <label htmlFor="tuesday" className="checkbox-label">T</label>
@@ -91,11 +121,11 @@ export default function FormAddOrder(props) {
           <div className="label-container">
             <input type="radio" onChange={handleRadioChange} checked={frequency == 1 ? true : false} name="freq" id="1" value="1" hidden />
             <label htmlFor="1" className="checkbox-label square mb-1"> Só Hoje</label>
-            <input type="radio" onChange={handleRadioChange} checked={frequency == 7 ? true : false}  name="freq" id="7" value="7" hidden />
+            <input type="radio" onChange={handleRadioChange} checked={frequency == 7 ? true : false} name="freq" id="7" value="7" hidden />
             <label htmlFor="7" className="checkbox-label square mb-1">Toda Semana</label>
-            <input type="radio" onChange={handleRadioChange} checked={frequency == 15 ? true : false}  name="freq" id="15" value="15" hidden />
+            <input type="radio" onChange={handleRadioChange} checked={frequency == 15 ? true : false} name="freq" id="15" value="15" hidden />
             <label htmlFor="15" className="checkbox-label square"> Cada 15 dias</label>
-            <input type="radio" onChange={handleRadioChange} checked={frequency == 30 ? true : false}  name="freq" id="30" value="30" hidden />
+            <input type="radio" onChange={handleRadioChange} checked={frequency == 30 ? true : false} name="freq" id="30" value="30" hidden />
             <label htmlFor="30" className="checkbox-label square">Todo mês</label>
           </div>
         </fieldset>
