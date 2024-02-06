@@ -9,7 +9,7 @@ import {
 import Pedidos from './components/organisms/pages/Pedidos/Pedidos.jsx';
 import Template from './components/organisms/Template.jsx';
 
-const API_URL = "https://192.168.15.32:3030"
+const API_URL = "http://192.168.15.32:3030"
 
 const router = createBrowserRouter([
   {
