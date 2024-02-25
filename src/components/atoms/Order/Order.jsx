@@ -5,12 +5,13 @@ export default function Order({order, setOrders}) {
 
     useEffect(() => {
         const ordersConcluded = localStorage.getItem('ordersConcluded')
-
+        console.log("aq")
         if (ordersConcluded) {
             const ordersConcludedArr = ordersConcluded.split(",").map(order => order.trim())
-         
+            console.log("aq 2")
+            console.log(ordersConcludedArr)
             setOrders(previousOrders => {
-       
+                console.log(previousOrders)
                 return previousOrders.map(order => ({
                     ...order,
                     concluded: ordersConcludedArr.includes(order.name) 

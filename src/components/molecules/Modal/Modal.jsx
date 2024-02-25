@@ -11,7 +11,7 @@ export default function Modal(props) {
                     <span className="modal-title bold">Adicionar Pedido</span>
                     <i className="bi bi-x-lg" onClick={props.handleCloseModal}></i>
                 </div>
-                <FormAddOrder modalIsOpen={props.modalIsOpen}/>
+                <FormAddOrder API_URL={props.API_URL} modalIsOpen={props.modalIsOpen} handleCloseModal={props.handleCloseModal}/>
             </div>
         </div>
     )

@@ -26,7 +26,7 @@ export default function Template(props) {
                 Início de mês
             </div>
             {props.pageBody}
-            <Modal handleCloseModal = {handleCloseModal} modalIsOpen = {modalIsOpen}/>
+            <Modal API_URL={props.API_URL} handleCloseModal = {handleCloseModal} modalIsOpen = {modalIsOpen}/>
             <Nav active={props.active} />
 
         </>
