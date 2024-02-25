@@ -3,17 +3,18 @@ import './OrdersList.css'
 import Order from '../../atoms/Order/Order'
 
 export default function OrdersList() {
-    const API_URL_DEV = "127.0.0.1"
+    const API_URL_DEV = "177.205.192.209"
     const [orders, setOrders] = useState([
         
     ])
 
     useEffect(() => {
-        fetch(`${API_URL_DEV}:3030/orders/getAll`, {
+        fetch(`http://${API_URL_DEV}:3000/orders/getAll`, {
             method: 'GET',
             mode: 'cors',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*'
             }
         })
         .then(response => {

@@ -7,7 +7,7 @@ export default function Pedidos() {
     return (
         <>
             <div className="container">
-                <p className='bold'>Hoje</p>
+                <p className=''>Hoje</p>
                 <OrdersList/>
             </div>
 

@@ -49,9 +49,16 @@ export default function FormAddOrder(props) {
   }
 
   const handleSubmit = (e) => {
+    const daysOfWeekArr = []
+    for (let day in daysOfWeek){ 
+      console.log(day)
+      if (daysOfWeek[day]) daysOfWeekArr.push(day)
+    }
+
+    // console.log(frequencyArr)
     const data = {
       name: inputName,
-      daysOfWeek,
+      daysOfWeek: daysOfWeekArr,
       frequency
     }
 
